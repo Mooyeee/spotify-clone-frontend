@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import './App.css';
-import Login from './Login';
-import Player from './Player';
-import { getTokenFromUrl } from './spotify';
+import Login from './Pages/Login/Login';
+import Player from './Pages/Player/Player';
+import { getTokenFromUrl } from './Provider/spotify';
 import SpotifyWebApi from 'spotify-web-api-js';
-import { useStateProviderValue } from './StateProvider';
+import { useStateProviderValue } from './Provider/StateProvider';
 
 const spotify = new SpotifyWebApi();
 
@@ -23,7 +23,7 @@ function App() {
       // setToken(_token);
       dispatch({
         type: 'SET_TOKEN',
-        token: token,
+        token: _token,
       });
       spotify.setAccessToken(_token);
 

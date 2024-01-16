@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from '../../assets/logo.svg';
 import './Login.css';
-import { loginUrl } from './spotify';
+import { loginUrl } from '../../Provider/spotify';
 
 function Login() {
   return (
