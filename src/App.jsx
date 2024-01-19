@@ -33,6 +33,20 @@ function App() {
           user: user,
         })
       );
+
+      spotify.getUserPlaylists().then((playlists) =>
+        dispatch({
+          type: 'SET_PLAYLISTS',
+          playlists: playlists,
+        })
+      );
+
+      spotify.getMySavedTracks().then((savedTracks) =>
+        dispatch({
+          type: 'SET_SAVED_TRACKS',
+          savedTracks: savedTracks,
+        })
+      );
     }
   });
 

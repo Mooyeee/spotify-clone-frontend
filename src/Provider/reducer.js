@@ -4,9 +4,11 @@ export const initialState = {
   playing: false,
   item: null,
   token: null,
+  savedTracks: null,
 };
 
 export const reducer = (state, action) => {
+  console.log('--- DISPATCHING ---');
   console.log(action);
 
   // Action has a type and a (dynamic) payload
@@ -21,6 +23,18 @@ export const reducer = (state, action) => {
       return {
         ...state,
         token: action.token,
+      };
+
+    case 'SET_PLAYLISTS':
+      return {
+        ...state,
+        playlists: action.playlists,
+      };
+
+    case 'SET_SAVED_TRACKS':
+      return {
+        ...state,
+        savedTracks: action.savedTracks,
       };
     default:
       return state;

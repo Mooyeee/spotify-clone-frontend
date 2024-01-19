@@ -7,11 +7,14 @@ const scopes = [
   'user-read-playback-state',
   'user-top-read',
   'user-modify-playback-state',
+  'user-library-read',
 ];
 
 export const loginUrl = `${authEndpoint}?client_id=${
   process.env.REACT_APP_CLIENT_ID
-}&redirect_uri=${redirectUri}&scope=${scopes.join('%20')}&response_type=token&show_dialog=true`;
+}&redirect_uri=${redirectUri}&scope=${scopes.join(
+  '%20'
+)}&response_type=token&show_dialog=true`;
 
 export const getTokenFromUrl = () =>
   window.location.hash
